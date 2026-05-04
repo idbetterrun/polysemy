@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polysemy — Linguistics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<div class="orbs">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+</div>
+
+<div class="slides">
+
+  <!-- ──────────────────── S1 · TITLE ──────────────────── -->
+  <div class="slide active" id="s1">
+    <span class="ghost-word" style="top:14%;left:7%;animation-delay:0s;animation-duration:9s">meaning</span>
+    <span class="ghost-word" style="top:74%;left:6%;animation-delay:1.5s;animation-duration:11s">语义</span>
+    <span class="ghost-word" style="top:20%;right:8%;animation-delay:.8s;animation-duration:8s">semantics</span>
+    <span class="ghost-word" style="top:80%;right:9%;animation-delay:2.1s;animation-duration:12s">context</span>
+    <span class="ghost-word" style="top:88%;left:32%;animation-delay:1s;animation-duration:10s">language</span>
+    <span class="ghost-word" style="top:7%;left:38%;animation-delay:2.3s;animation-duration:9s">多义</span>
+    <span class="ghost-word" style="top:55%;right:4%;animation-delay:3s;animation-duration:13s">词义</span>
+    <span class="ghost-word" style="top:38%;left:3%;animation-delay:1.7s;animation-duration:11s">words</span>
+    <div id="titleWrap" style="text-align:center"></div>
+    <div class="tagline">Semantics &nbsp;·&nbsp; The Life of Words</div>
+    <div class="hint-s1">Press → to begin</div>
+  </div>
+
+  <!-- ──────────────────── S2 · DEFINITION ──────────────────── -->
+  <div class="slide" id="s2">
+    <div class="def-wrap">
+      <div class="eyebrow">What is polysemy?</div>
+      <div id="def-lines">
+        <span class="def-line">While different words may have the <em>same or similar</em> meaning,</span>
+        <span class="def-line">the same one word may have <strong>more than one meaning</strong>.</span>
+        <span class="def-line" style="margin-top:1.2rem">This is what we call <strong>polysemy</strong> —</span>
+        <span class="def-line">and such a word is called a <strong>polysemous</strong> word.</span>
+      </div>
+      <div class="def-note" id="def-note">
+        The more commonly used a word is, the more likely it has<br>
+        accumulated <em>multiple meanings</em> over time.
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────── S3 · vs HOMONYMY ──────────────────── -->
+  <div class="slide" id="s3">
+    <div class="vs-wrap">
+      <div class="vs-panel panel-l">
+        <div class="vs-label" id="vl-l">Homonymy</div>
+        <div class="homo-stage">
+          <div class="homo-b homo-1" id="hb1">bank¹<span>riverside</span></div>
+          <div class="homo-b homo-2" id="hb2">bank²<span>financial</span></div>
+          <div class="vs-badge">✕</div>
+        </div>
+        <div class="vs-desc" id="vs-dl">Two separate words sharing the same form. Their origins are completely unrelated — there is no semantic link between them.</div>
+        <div class="vs-origin" id="vs-ol"><em>bakkr</em> (Old Norse) ≠ <em>banco</em> (Italian)</div>
+      </div>
+      <div class="vs-divider"></div>
+      <div class="vs-panel panel-r">
+        <div class="vs-label" id="vl-r">Polysemy</div>
+        <div class="poly-stage">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" id="pmSvg"></svg>
+          <div class="poly-center" id="pmC">table</div>
+          <div class="poly-sat ps1" id="ps1">furniture</div>
+          <div class="poly-sat ps2" id="ps2">data table</div>
+          <div class="poly-sat ps3" id="ps3">plateau</div>
+        </div>
+        <div class="vs-desc" id="vs-dr">One word whose meanings have grown over time from a common root — through metaphor, metonymy, or domain shift.</div>
+        <div class="vs-origin" id="vs-or"><em>tabula</em> (Latin) → all senses</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────── S4 · TABLE BUBBLES ──────────────────── -->
+  <div class="slide" id="s4">
+    <div class="b-stage" id="bStage">
+      <svg id="conn-svg" aria-hidden="true"></svg>
+      <div class="bubble b-main">TABLE</div>
+      <div id="b-hint">Press → or click the stage to reveal meanings</div>
+      <div id="b-count">0 / 7</div>
+    </div>
+  </div>
+
+  <!-- ──────────────────── S5 · FLIP CARDS ──────────────────── -->
+  <div class="slide" id="s5">
+    <div class="flip-label">Polysemy is everywhere</div>
+    <div class="card-row">
+      <div class="flip-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-f"><div class="fw">run</div><div class="ft">hover to explore</div></div>
+          <div class="card-b">
+            <div class="bw">run</div>
+            <ul>
+              <li>move quickly on foot</li>
+              <li>manage or operate</li>
+              <li>flow or stream</li>
+              <li>a score in baseball</li>
+              <li>a continuous period</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-f"><div class="fw">head</div><div class="ft">hover to explore</div></div>
+          <div class="card-b">
+            <div class="bw">head</div>
+            <ul>
+              <li>body part above neck</li>
+              <li>leader of a group</li>
+              <li>the top or front</li>
+              <li>to move toward</li>
+              <li>foam on a glass of beer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-f"><div class="fw">light</div><div class="ft">hover to explore</div></div>
+          <div class="card-b">
+            <div class="bw">light</div>
+            <ul>
+              <li>electromagnetic radiation</li>
+              <li>not heavy in weight</li>
+              <li>pale in color or shade</li>
+              <li>to set fire to</li>
+              <li>gentle or mild</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-f"><div class="fw">spring</div><div class="ft">hover to explore</div></div>
+          <div class="card-b">
+            <div class="bw">spring</div>
+            <ul>
+              <li>the season after winter</li>
+              <li>to jump or leap suddenly</li>
+              <li>a coiled elastic device</li>
+              <li>a natural water source</li>
+              <li>to crack or split open</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────── S6 · DEVELOPMENT ──────────────────── -->
+  <div class="slide" id="s6">
+    <div class="dev-label">How "table" grew its meanings</div>
+    <div class="timeline" id="tl">
+      <div class="t-item" data-d="0">
+        <div class="t-era">Primary meaning · origin</div>
+        <div class="t-body"><strong>tabula</strong> (Latin) first referred to a <em>thin flat piece of stone or wood</em> — a surface for writing or placing objects.</div>
+      </div>
+      <div class="t-item sec" data-d="220">
+        <div class="t-era">Metaphorical extension</div>
+        <div class="t-body">The flat-surface idea extended to <strong>a piece of furniture</strong> — a raised platform on legs for eating and working.</div>
+      </div>
+      <div class="t-item sec" data-d="440">
+        <div class="t-era">Metonymy · association</div>
+        <div class="t-body">From the object to its context: <strong>all the people seated at a table</strong>, then the food placed upon it.</div>
+      </div>
+      <div class="t-item sec" data-d="660">
+        <div class="t-era">Abstraction · domain transfer</div>
+        <div class="t-body">The visual structure of rows and columns gave rise to <strong>an orderly arrangement of data or facts</strong>.</div>
+      </div>
+      <div class="t-item sec" data-d="880">
+        <div class="t-era">Specialization · technical domains</div>
+        <div class="t-body">The core flat-surface idea spread further: <strong>a plateau in geography</strong>, <strong>a machine surface in engineering</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────── S7 · FEATURES ──────────────────── -->
+  <div class="slide" id="s7">
+    <div class="feat-eye">Three things to know about polysemy</div>
+    <div class="feats">
+      <div class="feat" data-d="0">
+        <div class="feat-n">1</div>
+        <div class="feat-body">
+          <h3>Meanings share a semantic core</h3>
+          <p>Unlike homonymy, polysemous senses trace back to one origin — connected through metaphor, metonymy, or specialization, not coincidence.</p>
+        </div>
+      </div>
+      <div class="feat" data-d="130">
+        <div class="feat-n">2</div>
+        <div class="feat-body">
+          <h3>Context resolves ambiguity</h3>
+          <p>"She cleared the table" vs. "a table of statistics" — surrounding language and situation always determine which sense of a polysemous word applies.</p>
+        </div>
+      </div>
+      <div class="feat" data-d="260">
+        <div class="feat-n">3</div>
+        <div class="feat-body">
+          <h3>Frequency drives expansion</h3>
+          <p>High-frequency words accumulate more meanings because they appear in more contexts — and each new context is an opportunity for semantic extension.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────── S8 · END ──────────────────── -->
+  <div class="slide" id="s8">
+    <div class="end-top">Polysemy &nbsp;·&nbsp; Semantics &nbsp;·&nbsp; 2026</div>
+    <div class="end-orn">
+      <div class="orn-d"></div><div class="orn-d"></div><div class="orn-d"></div>
+      <div class="orn-d"></div><div class="orn-d"></div>
+    </div>
+    <div class="members">
+      <div class="member" id="mb1">
+        <div class="member-num">20</div>
+        <div class="member-bar"></div>
+        <div class="member-name">黄贻福</div>
+      </div>
+      <div class="member" id="mb2">
+        <div class="member-num">31</div>
+        <div class="member-bar"></div>
+        <div class="member-name">谭清华</div>
+      </div>
+      <div class="member" id="mb3">
+        <div class="member-num">32</div>
+        <div class="member-bar"></div>
+        <div class="member-name">周剑</div>
+      </div>
+    </div>
+    <div class="end-sub">Business English · Linguistics</div>
+  </div>
+
+</div>
+
+<button class="nav-btn nb-l" id="prevBtn">‹</button>
+<button class="nav-btn nb-r" id="nextBtn">›</button>
+<div class="nav-dots" id="navDots"></div>
+<div class="slide-lbl" id="slideLbl">01 / 08</div>
+
+<script src="script.js"></script>
+</body>
+</html>
