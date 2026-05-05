@@ -1,14 +1,3 @@
-// ── CURSOR ────────────────────────────────────
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-(function animCur(){
-  cur.style.left=mx+'px';cur.style.top=my+'px';
-  rx+=(mx-rx)*.1;ry+=(my-ry)*.1;
-  ring.style.left=rx+'px';ring.style.top=ry+'px';
-  requestAnimationFrame(animCur);
-})();
-
 // ── SLIDE 1 · TITLE ──────────────────────────
 "POLYSEMY".split('').forEach((l,i)=>{
   const s=document.createElement('span');
@@ -230,6 +219,8 @@ function prev(){goTo(currentSlide-1)}
 
 document.getElementById('nextBtn').addEventListener('click',next);
 document.getElementById('prevBtn').addEventListener('click',prev);
+document.getElementById('touchNext').addEventListener('click',next);
+document.getElementById('touchPrev').addEventListener('click',prev);
 document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}
   if(e.key==='ArrowLeft'){e.preventDefault();prev()}

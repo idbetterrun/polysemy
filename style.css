@@ -5,21 +5,15 @@
   --text:#f6fbff; --dim:rgba(213,229,237,0.72); --mid:rgba(231,241,246,0.88);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{zoom:1.5}
 html,body{width:100%;height:100%;overflow:hidden}
 body{
   background:
     radial-gradient(circle at 18% 12%, rgba(127,216,255,.12), transparent 32%),
     radial-gradient(circle at 82% 78%, rgba(242,189,104,.10), transparent 30%),
     var(--bg);
-  color:var(--text);font-family:'Outfit',sans-serif;cursor:none}
+  color:var(--text);font-family:'Outfit',sans-serif;cursor:default}
 
-/* ── CURSOR ─────────────────────────── */
-#cur{position:fixed;width:10px;height:10px;border-radius:50%;background:rgba(127,214,255,.9);
-  box-shadow:0 0 14px rgba(127,214,255,.58);pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%)}
-#cur-ring{position:fixed;width:30px;height:30px;border-radius:50%;
-  border:1px solid rgba(127,214,255,.46);pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);transition:width .15s,height .15s}
 
 /* ── AMBIENT ─────────────────────────── */
 .orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
@@ -31,10 +25,6 @@ body{
 @keyframes db{0%,100%{transform:translate(0,0)}35%{transform:translate(-30px,-18px)}65%{transform:translate(25px,-35px)}}
 @keyframes dc{0%,100%{transform:translate(0,0)}50%{transform:translate(-38px,20px)}}
 
-/* ── GRAIN ──────────────────────────── */
-body::after{content:'';position:fixed;inset:0;z-index:500;pointer-events:none;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity:.35}
 
 /* ── SLIDE SYSTEM ───────────────────── */
 .slides{position:fixed;inset:0;z-index:1}
@@ -58,6 +48,16 @@ body::after{content:'';position:fixed;inset:0;z-index:500;pointer-events:none;
   transition:color .2s;line-height:1}
 .nav-btn:hover{color:rgba(246,251,255,.86)}
 .nb-l{left:.5rem}.nb-r{right:.5rem}
+
+/* ── TOUCH NAV ──────────────────────── */
+.touch-nav{position:fixed;bottom:2rem;left:2rem;display:flex;gap:.7rem;z-index:200}
+.touch-btn{width:58px;height:58px;border-radius:50%;border:1px solid rgba(127,214,255,.35);
+  background:rgba(127,214,255,.08);
+  color:rgba(246,251,255,.9);font-size:1.7rem;cursor:pointer;line-height:1;padding:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .18s,border-color .18s,transform .12s;user-select:none}
+.touch-btn:hover{background:rgba(127,214,255,.18);border-color:rgba(127,214,255,.65)}
+.touch-btn:active{transform:scale(.92);background:rgba(127,214,255,.26)}
 
 /* ── PARTICLES ──────────────────────── */
 .ptcl{position:fixed;width:5px;height:5px;border-radius:50%;background:var(--violet);
@@ -85,7 +85,7 @@ body::after{content:'';position:fixed;inset:0;z-index:500;pointer-events:none;
 @keyframes ghostFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
 .letter{display:inline-block;font-family:'Cormorant Garamond',serif;
-  font-size:clamp(5rem,13vw,11rem);font-weight:300;letter-spacing:.22em;
+  font-size:clamp(3.2rem,8.5vw,7rem);font-weight:300;letter-spacing:.22em;
   opacity:0;transform:translateY(28px) scale(.96);
   animation:lRise .65s cubic-bezier(.4,0,.2,1) forwards}
 @keyframes lRise{to{opacity:1;transform:translateY(0) scale(1)}}
@@ -131,7 +131,6 @@ body::after{content:'';position:fixed;inset:0;z-index:500;pointer-events:none;
 /* Homonymy - BANK bubbles */
 .homo-stage{position:relative;width:280px;height:170px}
 .homo-b{position:absolute;width:118px;height:118px;border-radius:50%;
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;
   opacity:0;top:50%;transform:translateY(-50%)}
@@ -183,7 +182,7 @@ body::after{content:'';position:fixed;inset:0;z-index:500;pointer-events:none;
 #conn-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .bubble{position:absolute;border-radius:50%;display:flex;align-items:center;
   justify-content:center;text-align:center;transform:translate(-50%,-50%);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+}
 .b-main{width:190px;height:190px;background:rgba(18,61,79,.94);
   border:1px solid rgba(127,214,255,.56);
   box-shadow:0 0 55px rgba(127,214,255,.16),inset 0 0 28px rgba(127,214,255,.08);
